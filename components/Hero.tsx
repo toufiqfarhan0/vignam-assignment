@@ -1,5 +1,6 @@
 "use client";
 
+import AnimateCard from "./Animate-Card";
 import { InputWithPaste } from "./ui/input";
 
 export default function Hero() {
@@ -20,7 +21,9 @@ export default function Hero() {
         />
       </div>
       <div className="mt-4">
-      <p className="text-sm font-bold text-slate-400">No signup, no credit card, no crap!</p>
+        <p className="text-sm font-bold text-slate-400">
+          No signup, no credit card, no crap!
+        </p>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export function HowItWorks() {
       description:
         "Choose social media sizes, adjust the style, set the border radius, and customise the design to your liking and preferred branding—all with a single click.",
       image:
-        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1726912063/step-1_grbgfh.webp",
+        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1726912063/step-2_n2egsf.webp",
     },
     {
       label: "Step 3",
@@ -28,7 +28,7 @@ export function HowItWorks() {
       description:
         "Simply export and publish your meticulously crafted posts, tailored to meet each social media's standards and format.",
       image:
-        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1726912063/step-1_grbgfh.webp",
+        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1726912063/step-3_d477fk.webp",
     },
   ];
   return (
