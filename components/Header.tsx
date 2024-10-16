@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { MessageCircle } from "lucide-react"
 import { InputWithPaste } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 
 export default function Component() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,7 +45,7 @@ export default function Component() {
               className="flex items-center space-x-4 px-4 py-2"
             >
               <MessageCircle className="h-6 w-6 text-white" />
-              <span className="text-xl font-bold text-white">Postable</span>
+              <span className="text-xl font-extrabold text-white italic">Postable</span>
               <div className="flex items-center space-x-2">
                 <InputWithPaste
                   className="w-80 items-center gap-2 rounded-xl border border-transparent bg-neutral-800 py-2 pe-2 ps-4 transition-colors focus-within:border-white/10 hover:bg-neutral-700 md:flex"
@@ -64,7 +63,7 @@ export default function Component() {
               className="flex items-center space-x-2 px-4 py-2"
             >
               <MessageCircle className="h-6 w-6 text-white" />
-              <span className="text-xl font-bold text-white">Postable</span>
+              <span className="text-xl font-extrabold text-white italic">Postable</span>
             </motion.div>
           )}
         </AnimatePresence>
