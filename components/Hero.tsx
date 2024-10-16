@@ -1,6 +1,6 @@
 "use client";
 
-import AnimateCard from "./Animate-Card";
+import AnimateCard from "./Card";
 import { InputWithPaste } from "./ui/input";
 
 export default function Hero() {
