@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="flex h-[600px] flex-col items-center justify-center text-center">
       <h1 className="mb-6 text-6xl font-extrabold text-gray-800">
-        Convert <span className="text-purple-500">Tweets</span>{" "}
+        Convert <span className="text-purple-800">Tweets</span>{" "}
         <span className="flex mt-2">into Engaging Social</span>{" "}
         <span className="flex mt-2">Media Posts, Instantly!</span>
       </h1>
