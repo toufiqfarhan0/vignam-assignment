@@ -5,7 +5,7 @@ import { AnimateTabs } from './Animate-Tabs'
 export default function AnimateCard () {
   return (
     <div
-    className="mx-auto mb-5 w-fit max-w-full rounded-[16px] bg-cover bg-top pt-8 sm:mb-16 sm:rounded-[32px] md:mb-24 md:rounded-[64px] md:px-12 lg:px-20 lg:pt-10"
+    className="mx-auto mb-4 w-fit max-w-full rounded-[16px] bg-cover bg-top pt-8 sm:mb-16 sm:rounded-[32px] md:mb-24 md:rounded-[64px] md:px-12 lg:px-20 lg:pt-10"
     style={{
       backgroundImage: 'url("/images/section-bg.webp")',
       backgroundSize: "100% 300%",

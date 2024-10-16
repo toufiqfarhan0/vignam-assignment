@@ -35,7 +35,7 @@ const InputWithPaste = React.forwardRef<HTMLInputElement, InputWithPasteProps>(
         <Button
           type="button"
           variant="default"
-          className={"absolute right-2 flex items-center justify-center gap-2 rounded-md bg-gray-500 px-4 py-2 text-white transition-colors hover:bg-gray-600"}
+          className={"absolute right-2 flex items-center justify-center gap-2 rounded-md bg-neutral-700 px-4 py-2 text-white transition-colors hover:bg-gray-600"}
           onClick={onPaste}
         >
           <span className="text-sm font-medium">Paste</span>

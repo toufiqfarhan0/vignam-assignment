@@ -9,7 +9,7 @@ export function Features() {
 
   return (
     <div className="w-full h-full">
-      <h2 className="max-w-7xl mx-auto text-4xl md:text-6xl font-light text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="text-3xl md:text-5xl max-w-7xl mx-auto font-light text-neutral-800 dark:text-neutral-200 font-sans">
         Our Features
       </h2>
       <Carousel items={cards} />

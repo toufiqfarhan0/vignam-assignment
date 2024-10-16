@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import SocialMedia from "./Social-Media";
 
 export function HowItWorks() {
   const steps = [
@@ -31,14 +32,17 @@ export function HowItWorks() {
         "https://res.cloudinary.com/dzv61qpeu/image/upload/v1726912063/step-3_d477fk.webp",
     },
   ];
+
   return (
     <div className="w-full max-w-7xl mx-auto">
-      <h2 className="text-4xl md:text-6xl font-light text-neutral-800 dark:text-neutral-200 font-sans text-start">
+      <h2 className="text-3xl md:text-5xl font-light text-neutral-800 dark:text-neutral-200 font-sans text-start">
         How it works?
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {/* Carousel - Visible only on small screens */}
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory md:hidden max-w-fit">
         {steps.map((step, index) => (
-          <CardContainer key={index} className="inter-var ">
+          <CardContainer key={index} className="snap-center min-w-[80%]">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border md:h-[25rem] overflow-hidden flex flex-col items-start justify-start">
               <CardItem translateZ="100" className="w-full">
                 <Image
@@ -68,6 +72,45 @@ export function HowItWorks() {
             </CardBody>
           </CardContainer>
         ))}
+      </div>
+
+      {/* Grid layout - Visible on larger screens */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6">
+        {steps.map((step, index) => (
+          <CardContainer key={index}>
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border md:h-[25rem] overflow-hidden flex flex-col items-start justify-start">
+              <CardItem translateZ="100" className="w-full">
+                <Image
+                  src={step.image}
+                  height={1000}
+                  width={1000}
+                  className="h-48 w-full object-cover rounded-xl"
+                  alt={`Step ${index + 1} thumbnail`}
+                />
+              </CardItem>
+              <CardItem className="mt-4 font-bold text-neutral-400">
+                {step.label}
+              </CardItem>
+              <CardItem
+                translateZ="50"
+                className="text-xl font-bold text-neutral-600 dark:text-white mt-2"
+              >
+                {step.title}
+              </CardItem>
+              <CardItem
+                as="p"
+                translateZ="60"
+                className="text-neutral-500 text-sm mt-4 dark:text-neutral-300"
+              >
+                {step.description}
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+        ))}
+      </div>
+
+      <div>
+        <SocialMedia />
       </div>
     </div>
   );
