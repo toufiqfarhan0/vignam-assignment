@@ -73,7 +73,7 @@ export default function OneSolution() {
         const nextIndex = (currentIndex + 1) % tabs.length;
         return tabs[nextIndex];
       });
-    }, 20000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);

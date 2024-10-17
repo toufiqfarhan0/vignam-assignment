@@ -8,7 +8,7 @@ export function AnimatedModal() {
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
   return (
-    <div className="group mx-auto w-fit mb-10 mt-6 hidden origin-top scale-[0.6] flex-col items-center justify-center gap-4 rounded-[42px] bg-transparent px-4 py-6 transition-colors hover:bg-[#F9F4FE] sm:flex md:-mb-40">
+    <div className="group mx-auto w-full mt-6 hidden origin-top scale-[0.6] flex-col items-center justify-center gap-4 rounded-[42px] bg-transparent px-4 py-6 transition-colors hover:bg-[#F9F4FE] sm:flex md:-mb-40">
         <h1 className="italic text-5xl font-light">
             Try Simple Tweet 
         </h1>
@@ -17,7 +17,7 @@ export function AnimatedModal() {
           <motion.div
             key={"images" + idx}
             style={{
-              rotate: Math.random() * 10,
+              rotate: Math.random() * 9,
             }}
             whileHover={{
               scale: 1.1,

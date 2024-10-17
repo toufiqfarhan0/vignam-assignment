@@ -1,5 +1,6 @@
-import { Check } from 'lucide-react'
-import React from 'react'
+import { Check } from "lucide-react";
+import React from "react";
+import MovingCards from "./Moving-Cards";
 
 export default function SocialMedia() {
   return (
@@ -10,10 +11,21 @@ export default function SocialMedia() {
         </h2>
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 gap-5">
           <div className="flex-1 text-neutral-600 dark:text-neutral-400 text-sm">
-            <p className="whitespace-nowrap">We've meticulously designed each template to meet the specific guidelines</p>
-            <p className="whitespace-nowrap">and format requirements of all social media platforms. By preserving</p>
-            <p className="whitespace-nowrap">safe zones and adhering to platform standards, we ensure that your</p>
-            <p className="whitespace-nowrap">posts will always be visually striking, no matter where you share them.</p>
+            <p className="whitespace-nowrap">
+              We've meticulously designed each template to meet the specific
+              guidelines
+            </p>
+            <p className="whitespace-nowrap">
+              and format requirements of all social media platforms. By
+              preserving
+            </p>
+            <p className="whitespace-nowrap">
+              safe zones and adhering to platform standards, we ensure that your
+            </p>
+            <p className="whitespace-nowrap">
+              posts will always be visually striking, no matter where you share
+              them.
+            </p>
           </div>
           <div className="flex-1 mt-4 md:mt-0">
             <div className="flex flex-row md:flex-col md:space-x-0 md:space-y-2">
@@ -24,8 +36,9 @@ export default function SocialMedia() {
           </div>
         </div>
       </div>
+      <MovingCards />
     </div>
-  )
+  );
 }
 
 function CheckItem({ text }: { text: string }) {
@@ -34,5 +47,5 @@ function CheckItem({ text }: { text: string }) {
       <Check className="w-5 h-5 text-neutral-500" />
       <p className="text-sm text-neutral-700 dark:text-neutral-300">{text}</p>
     </div>
-  )
+  );
 }
