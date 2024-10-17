@@ -148,6 +148,24 @@ export default function OneSolution() {
           </AnimatePresence>
         </div>
       </Tabs>
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-4 py-12 md:gap-12 md:py-24 xl:pe-4 xl:ps-0">
+        <p className="relative max-w-4xl text-balance text-3xl font-normal tracking-[-0.4px] text-neutral-400 md:text-[40px] md:leading-[42px]">
+          <span className="text-neutral-800">
+            Grow your audience with powerful visuals{" "}
+          </span>
+          shared across all your social media platforms.
+        </p>
+      </div>
+      <div>
+        {" "}
+        <Image
+          src="https://res.cloudinary.com/dzv61qpeu/image/upload/v1726913723/engaging_uhqrqs.webp"
+          alt=""
+          width={100}
+          height={100}
+          className="w-full h-auto"
+        />
+      </div>
       <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
         <ContainerScroll
           titleComponent={
