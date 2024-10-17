@@ -1,6 +1,6 @@
 "use client";
 
-import AnimateCard from "./Card";
+import { AnimatedModal } from "./Animate-Modal";
 import { InputWithPaste } from "./ui/input";
 
 export default function Hero() {
@@ -24,6 +24,9 @@ export default function Hero() {
         <p className="text-sm font-bold text-slate-400">
           No signup, no credit card, no crap!
         </p>
+      </div>
+      <div className="mb-10">
+      <AnimatedModal />
       </div>
     </div>
   );
