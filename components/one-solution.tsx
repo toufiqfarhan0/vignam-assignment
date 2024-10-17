@@ -76,7 +76,7 @@ export default function OneSolution() {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [tabContent]);
 
   const handleTabChange = (value: string) => {
     if (isTabKey(value)) {

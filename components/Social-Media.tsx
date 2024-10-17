@@ -12,7 +12,7 @@ export default function SocialMedia() {
         <div className="flex flex-col md:flex-row md:items-start md:space-x-8 gap-5">
           <div className="flex-1 text-neutral-600 dark:text-neutral-400 text-sm">
             <p className="whitespace-nowrap">
-              We've meticulously designed each template to meet the specific
+              We&apos;ve meticulously designed each template to meet the specific
               guidelines
             </p>
             <p className="whitespace-nowrap">
