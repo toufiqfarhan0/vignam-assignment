@@ -1,84 +1,92 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tab-onesol"
-import Image from 'next/image'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tab-onesol";
+import Image from "next/image";
+import { ContainerScroll } from "./ui/container-scroll";
+import { Button } from "./ui/button";
 
-type TabKey = 'individual' | 'influencer' | 'business'
+type TabKey = "individual" | "influencer" | "business";
 
 type TabContent = {
-  title: string
-  description: string
-  features: string[]
-  image: string
-}
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+};
 
 type TabContentMap = {
-  [key in TabKey]: TabContent
-}
+  [key in TabKey]: TabContent;
+};
 
 export default function OneSolution() {
-  const [activeTab, setActiveTab] = useState<TabKey>('individual')
+  const [activeTab, setActiveTab] = useState<TabKey>("individual");
 
   const tabContent: TabContentMap = {
     individual: {
       title: "Individual",
-      description: "Postable is perfect for individuals who want to elevate their social media presence without the hassle. Whether you're sharing thoughts, opinions, or everyday moments, Postable makes it easy to create and share beautiful, impactful posts from your tweets.",
+      description:
+        "Postable is perfect for individuals who want to elevate their social media presence without the hassle. Whether you're sharing thoughts, opinions, or everyday moments, Postable makes it easy to create and share beautiful, impactful posts from your tweets.",
       features: [
         "Effortless Post Creation",
         "Enhanced Visual Appeal",
         "Easy Sharing Across Platforms",
-        "Consistent Social Media Presence"
+        "Consistent Social Media Presence",
       ],
-      image: "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061157/Individual_fe1fis.webp"
+      image:
+        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061157/Individual_fe1fis.webp",
     },
     influencer: {
       title: "Influencer",
-      description: "For influencers, maintaining a consistent and visually appealing social media presence is crucial. Postable empowers you to convert your tweets into captivating images that align with your brand, helping you to keep your content fresh and engaging across all platforms.",
+      description:
+        "For influencers, maintaining a consistent and visually appealing social media presence is crucial. Postable empowers you to convert your tweets into captivating images that align with your brand, helping you to keep your content fresh and engaging across all platforms.",
       features: [
         "Quick Post Creation",
         "Boosted Follower Engagement",
         "Consistent Multi-Platform Presence",
-        "Content Diversification"
+        "Content Diversification",
       ],
-      image: "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061158/Influencers_x5kswv.webp"
+      image:
+        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061158/Influencers_x5kswv.webp",
     },
     business: {
       title: "Business",
-      description: "Businesses need to stay agile and maintain a strong social media presence. Postable helps you quickly turn tweets into polished visuals that resonate with your audience, reinforcing your brand and driving engagement without the need for a full design team.",
+      description:
+        "Businesses need to stay agile and maintain a strong social media presence. Postable helps you quickly turn tweets into polished visuals that resonate with your audience, reinforcing your brand and driving engagement without the need for a full design team.",
       features: [
         "Content Repurposing",
         "Cross-Platform Marketing",
         "Easy Sharing Across Platforms",
-        "Brand Consistency"
+        "Brand Consistency",
       ],
-      image: "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061158/Businesses_tc1bbp.webp"
-    }
-  }
+      image:
+        "https://res.cloudinary.com/dzv61qpeu/image/upload/v1727061158/Businesses_tc1bbp.webp",
+    },
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prevTab) => {
-        const tabs: TabKey[] = Object.keys(tabContent) as TabKey[]
-        const currentIndex = tabs.indexOf(prevTab)
-        const nextIndex = (currentIndex + 1) % tabs.length
-        return tabs[nextIndex]
-      })
-    }, 20000)
+        const tabs: TabKey[] = Object.keys(tabContent) as TabKey[];
+        const currentIndex = tabs.indexOf(prevTab);
+        const nextIndex = (currentIndex + 1) % tabs.length;
+        return tabs[nextIndex];
+      });
+    }, 20000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   const handleTabChange = (value: string) => {
     if (isTabKey(value)) {
-      setActiveTab(value)
+      setActiveTab(value);
     }
-  }
+  };
 
   const isTabKey = (value: string): value is TabKey => {
-    return Object.keys(tabContent).includes(value)
-  }
+    return Object.keys(tabContent).includes(value);
+  };
 
   return (
     <div className="w-full h-full p-4">
@@ -89,7 +97,11 @@ export default function OneSolution() {
         Postable helps everyone to share their thoughts across multiple
         platforms
       </p>
-      <Tabs value={activeTab} className="space-y-4 max-w-7xl mx-auto mt-4" onValueChange={handleTabChange}>
+      <Tabs
+        value={activeTab}
+        className="space-y-4 max-w-7xl mx-auto mt-4"
+        onValueChange={handleTabChange}
+      >
         <TabsList>
           {(Object.keys(tabContent) as TabKey[]).map((tab) => (
             <TabsTrigger key={tab} value={tab}>
@@ -106,9 +118,7 @@ export default function OneSolution() {
           <div className="flex-1">
             <TabsContent value={activeTab}>
               <div>
-                <p className="mb-4">
-                  {tabContent[activeTab].description}
-                </p>
+                <p className="mb-4">{tabContent[activeTab].description}</p>
 
                 <ol className="list-decimal pl-5 space-y-2">
                   {tabContent[activeTab].features.map((feature, index) => (
@@ -124,7 +134,7 @@ export default function OneSolution() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5, type: 'spring' }}
+              transition={{ duration: 0.5, type: "spring" }}
               className="flex-1 flex justify-center items-center"
             >
               <Image
@@ -138,6 +148,30 @@ export default function OneSolution() {
           </AnimatePresence>
         </div>
       </Tabs>
+      <div className="flex flex-col mt-[-100px] md:mt-[-50px]">
+        <ContainerScroll
+          titleComponent={
+            <div className="flex items-center flex-col">
+              <h1 className="text-5xl md:text-8xl  bg-clip-text text-transparent bg-gradient-to-b from-black to-purple-600 font-sans font-bold">
+                One-Click to Create
+              </h1>
+              <p>
+                Postable is built with simplicity and fun at its core. No design
+                skills? No problem. We handle the heavy lifting so you can
+                effortlessly create stunning posts.
+              </p>
+              <Button
+                size={"lg"}
+                className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit border-t-2 rounded-full border-[#4D4D4D] bg-[#1F1F1F] hover:bg-gray-500 group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-300 to-neutral-400  md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
+                  Get Started For Free
+                </span>
+              </Button>
+            </div>
+          }
+        />
+      </div>
     </div>
-  )
+  );
 }
