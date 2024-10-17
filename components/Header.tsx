@@ -26,7 +26,7 @@ export default function Component() {
     >
       <motion.div
         layout
-        className="mt-4 overflow-hidden rounded-lg bg-neutral-900 shadow-xl flex items-center"
+        className="mt-4 overflow-hidden rounded-2xl bg-neutral-900 shadow-xl flex items-center"
         initial={false}
         animate={{
           height: isScrolled ? "auto" : "48px",

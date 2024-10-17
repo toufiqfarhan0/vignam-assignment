@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import { HowItWorks } from "@/components/how-it-works";
+import OneSolution from "@/components/one-solution";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <AnimateCard />
       <HowItWorks />
       <Features />
+      <OneSolution />
       <Footer />
     </div>
   );
